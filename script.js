@@ -1,9 +1,25 @@
+const startHour = 0
+const endHour = 24
+const hoursRange = endHour - startHour;
+const expandedDayWidth = 300;
+
+
 $(document).ready(function() {
     weekTables();
 
     $('.select-col').click(function() {
-        $(this).parent().addClass('test-background');
-  
+        $(this).parent().toggleClass('expand-day');
+        
+        x = expandedDayWidth / hoursRange; // for the with of the time grid
+        
+
+        for (let i = startHour; i < endHour; i++) {
+            var el = '<div class="time-label" ' +
+                'style="width: ' + x + 'px;">'+ i +
+                 '</div>';
+            $(this).find('div.expand-time').append(el);
+        }
+        
     });
 });
 
@@ -25,23 +41,23 @@ function weekTables() {
     loopDate.setDate(1);
 
     let cssGrid = document.createElement('div');
-    cssGrid.classList.add('grid');
+    cssGrid.classList.add('month-table');
     buildingSpace.appendChild(cssGrid);
 
     
     // build the left column
     let colLeft = document.createElement('div');
-    colLeft.classList.add('grid-col', 'grid-col--fixed-left');
+    colLeft.classList.add('table-column', 'table-col-fixed');
     cssGrid.appendChild(colLeft);
 
     let colLeftTitle = document.createElement('div');
-    colLeftTitle.classList.add('grid-item--header');
+    colLeftTitle.classList.add('table-header');
     colLeftTitle.innerHTML = '<br>' + "Time";
     colLeft.appendChild(colLeftTitle);
 
     for (let i = 0; i < 24; i++) {
         let timeLabel = document.createElement('div');
-        timeLabel.classList.add('grid-item');
+        timeLabel.classList.add('table-cell');
         timeLabel.innerText = String(i);
         colLeft.appendChild(timeLabel);
     }
@@ -50,20 +66,22 @@ function weekTables() {
 
         // create a new column
         let dayColumn = document.createElement('div');
-        dayColumn.classList.add('grid-col');
+        dayColumn.classList.add('table-column');
         cssGrid.appendChild(dayColumn);
 
         // column header (date)
         let dayColumnHead = document.createElement('div');
-        dayColumnHead.classList.add('grid-item--header');
+        dayColumnHead.classList.add('table-header');
         dayColumnHead.classList.add('select-col'); // reaction to click
-        dayColumnHead.innerHTML = '<a href="#!">' + calendarLabels.weekDays[loopDate.getDay()] + '<br>' + loopDate.getDate() + '</a>';
+        dayColumnHead.innerHTML = '<a href="#!"><span class="hday">' +
+            calendarLabels.weekDays[loopDate.getDay()] + '</span>' + loopDate.getDate() + 
+            '<div class="expand-time"></div></a>';
         dayColumn.appendChild(dayColumnHead);
 
         // create all the cells
         for (let i = 0; i < 24; i++) {
             let cell = document.createElement('div');
-            cell.classList.add('grid-item');
+            cell.classList.add('table-cell');
             if (i % 2 == 0) {
                 cell.classList.add('even-row');
             }
