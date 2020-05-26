@@ -18,30 +18,28 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="#">Planning<span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
+                            <a class="nav-link" href="#">Coaching</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Messages</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Dropdown
+                            User Name
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">User Management</a>
+                                <a class="dropdown-item" href="#">Global Settings</a>
+                                <a class="dropdown-item" href="#">Personal Settings</a>
+                                <a class="dropdown-item" href="#">Subscription info</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Something else here</a>
+                                <a class="dropdown-item" href="#">Logout</a>
                             </div>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                        </li>
                     </ul>
-                    <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                    </form>
                 </div>
             </nav>
         </header>
@@ -49,17 +47,196 @@
         <br>
         <br>
         <div class="container">
-        <h1>Administrator Settings</h1>
-        <h2>Current plan: Free (max 12 users)</h2>
+        <h1>Manager Settings</h1>
+        Please take your time to adjust the settings. It will save you a lot of time in the future :)
+        <p>Current plan: Free (max 12 users, 1 team). Only an andministrator can change the subscription</p>
+        <div class="row">
+            <div class="col-sm-12 col-md-6">
+                <label for="inputState">Agent levels</label>
+                <select id="inputState" class="form-control">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option selected>4</option>
+                </select>
+            </div>
+            <div class="col-sm-12 col-md-6">
+                <small class="form-text text-muted">How many categories of agents do you have?</small>
+            </div>
+        </div>
+        <!-- here comes the loop according to the number of levels -->
+        <div class="row">
+            <div class="col-sm-12 col-md-6">
+                <label for="exampleInputEmail1">Level 1</label>
+                <input type="text" class="form-control" id="i-company-name" value="Intern" maxlength="40">
+            </div>
+            <div class="col-sm-12 col-md-6">
+                <label for="exampleInputEmail1">Level 2</label>
+                <input type="text" class="form-control" id="i-company-name" value="Junior" maxlength="40">
+            </div>
+            <div class="col-sm-12 col-md-6">
+                <label for="exampleInputEmail1">Level 3</label>
+                <input type="text" class="form-control" id="i-company-name" value="Medior" maxlength="40">
+            </div>
+            <div class="col-sm-12 col-md-6">
+                <label for="exampleInputEmail1">level 4</label>
+                <input type="text" class="form-control" id="i-company-name" value="Senior" maxlength="40">
+            </div>
+        </div>
+        <!-- end loop -->
+        <div class="row">
+            <div class="col-sm-12 col-md-4">
+                <label for="lunchbreak-lenght">Length of lunchbreach in minutes</label>
+                <input type="text" class="form-control" id="lunchbreak-lenght" value="30" maxlength="40">
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <label for="dinnerbreak-lenght">Length of dinnerbreak in minutes</label>
+                <input type="text" class="form-control" id="dinnerbreak-lenght" value="30" maxlength="40">
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <label for="lunchbreak-length">Paid breaks in minutes</label>
+                <input type="text" class="form-control" id="lunchbreak-length" value="15" maxlength="40">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <input class="form-check-input" type="checkbox" id="change-same" required>
+                <label class="form-check-label" for="changeSame">
+                Allow agents from the same category to swap shifts without approval
+                </label>
+            </div>
+            <div class="col-12">
+                <input class="form-check-input" type="checkbox" id="change-min" required>
+                <label class="form-check-label" for="change-min">
+                Allow agents to change a shift when the minimum people is still there
+                </label>
+            </div>
+            <div class="col-12">
+                <input class="form-check-input" type="checkbox" id="change-overflow" required>
+                <label class="form-check-label" for="change-overflow">
+                Allow agents to change a shift when there are more people than needed
+                </label>
+            </div>
+        </div>
+        <p>Define your working hours</p>
+        <div class="row">
+            <div class="col-sm-12 col-md-6">
+                <label for="inputState">How many different shift do you have??</label>
+                <select id="inputState" class="form-control">
+                    <option selected>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                </select>
+            </div>
+            <div class="col-sm-12 col-md-6">
+                Reasons for choosing more than one shift:
+                <br>
+                - Different salary according to the shift
+                <br>
+                - Office closed during lunch break
+                <br>
+                The shifts don't have to correspond to actual work shifts of people. Users can work accross shifts.
+            </div>
+        </div>
+        <p>working hours and minimum agents in a shift </p>
+            
         How many coaching sessions per month?
-        
 
 
+        <div class="row">
+
+            <h4>Define your working hours and the the minimum of agents in every shift according to the categories? </h4>
+            <p>This table is not mandatory. It helps with the planning and the color codes</p>
+            
+
+            <table class="settings-table">
+                <tr>
+                    <td>Weekday</td>
+                    <td>Shift 1</td>
+                    <td>Shift 2</td>
+                    <td>Shift 3</td>
+                </tr>
+                <tr>
+                    <td>Monday</td>
+                    <td>
+                        Working-hours: <input type="time" name="quantity"> - <input type="time" name="quantity"> <br>
+                        <!-- loop according to the types of agents-->
+                        Intern: <input type="number" name="quantity" min="1" max="5"><br>
+                        Junior: <input type="number" name="quantity" min="1" max="5"> <br>
+                        Medior: <input type="number" name="quantity" min="1" max="5"> <br>
+                        Senior: <input type="number" name="quantity" min="1" max="5"> <br>
+                        
+                    </td>
+                    <td>
+                    Working-hours: <input type="time" name="quantity"> - <input type="time" name="quantity" > <br>
+                        <!-- loop according to the types of agents-->
+                        Intern: <input type="number" name="quantity" min="1" max="5"> <br>
+                        Junior: <input type="number" name="quantity" min="1" max="5"> <br>
+                        Medior: <input type="number" name="quantity" min="1" max="5"> <br>
+                        Senior: <input type="number" name="quantity" min="1" max="5"> <br>
+                        
+                    </td>
+                    <td>
+                    Working-hours: <input type="time" name="quantity" > - <input type="time" name="quantity" > <br>
+                        <!-- loop according to the types of agents-->
+                        Intern: <input type="number" name="quantity" min="1" max="5"> <br>
+                        Junior: <input type="number" name="quantity" min="1" max="5"> <br>
+                        Medior: <input type="number" name="quantity" min="1" max="5"> <br>
+                        Senior: <input type="number" name="quantity" min="1" max="5"> <br>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>Tuesday</td>
+                    <td>
+                    Working-hours: <input type="time" name="quantity" > - <input type="time" name="quantity" > <br>
+                        <!-- loop according to the types of agents-->
+                        Intern: <input type="number" name="quantity" min="1" max="5"> <br>
+                        Junior: <input type="number" name="quantity" min="1" max="5"><br>
+                        Medior: <input type="number" name="quantity" min="1" max="5"><br>
+                        Senior: <input type="number" name="quantity" min="1" max="5"><br>
+                        
+                    </td>
+                    <td>
+                    Working-hours: <input type="time" name="quantity" > - <input type="time" name="quantity" > <br>
+                        <!-- loop according to the types of agents-->
+                        Intern: <input type="number" name="quantity" min="1" max="5"><br>
+                        Junior: <input type="number" name="quantity" min="1" max="5"><br>
+                        Medior: <input type="number" name="quantity" min="1" max="5"><br>
+                        Senior: <input type="number" name="quantity" min="1" max="5"><br>
+                        
+                    </td>
+                    <td>
+                    Working-hours: <input type="time" name="quantity" > - <input type="time" name="quantity" > <br>
+                        <!-- loop according to the types of agents-->
+                        Intern: <input type="number" name="quantity" min="1" max="5"><br>
+                        Junior: <input type="number" name="quantity" min="1" max="5"><br>
+                        Medior: <input type="number" name="quantity" min="1" max="5"><br>
+                        Senior: <input type="number" name="quantity" min="1" max="5"><br>
+                        
+                    </td>
+                </tr>
+                <tr>
+                <td>
+                ...
+                </td>
+                </tr>
 
 
+            </table>
 
+            <br>
+            
 
-
+            <br>
+            Add National holidays:
+            <br>
+            When do you want the planning done?
+            xx days before the month starts
             </form>
         </div>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>

@@ -18,30 +18,28 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="#">Planning<span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
+                            <a class="nav-link" href="#">Coaching</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Messages</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Dropdown
+                            User Name
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">User Management</a>
+                                <a class="dropdown-item" href="#">Global Settings</a>
+                                <a class="dropdown-item" href="#">Personal Settings</a>
+                                <a class="dropdown-item" href="#">Subscription info</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Something else here</a>
+                                <a class="dropdown-item" href="#">Logout</a>
                             </div>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                        </li>
                     </ul>
-                    <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                    </form>
                 </div>
             </nav>
         </header>
@@ -49,50 +47,160 @@
         <br>
         <br>
         <div class="container">
-        <h1>Administrator Settings</h1>
-        <h2>Current plan: Free (max 12 users)</h2>
-        <h3>who will get infos and updates from c-ronics.com?</h3>
-        <p>[] Administrator  [] Managers  [] Agents  [] Viewers</p>
+            <h1>Administrator Settings</h1>
+            <p>Current plan: Free (max 12 users and 1 team) click here to go to change your subscription</p>
+            <p>If you make changes to hour initial settings, the changes will only take affect from the beginning of the next month</p>
             <form>
-            Week starts on: (Dropdown list)</br><br>
-                Number of teams:<br>
-                Name of team 1: <br>
-                Name of team 2: <br>
-                ... <br>
-                <br>
-                Are all teams sharing the following settings?<br><br>
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <label for="exampleInputEmail1">Company Name</label>
+                        <input type="text" class="form-control" id="i-company-name" placeholder="Enter name" maxlength="40">
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <small class="form-text text-muted">This will be shown in the upper left corner</small>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <label for="exampleInputEmail1">Company Email</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <small class="form-text text-muted">Not mandatory. All correspondence happens to the email adresses of the admins</small>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <label for="inputState">When does your week start?</label>
+                        <select id="inputState" class="form-control">
+                            <option selected>Sunday</option>
+                            <option>Monday</option>
+                            <option>Tuesday</option>
+                            <option>Wednesday</option>
+                            <option>Thursday</option>
+                            <option>Friday</option>
+                            <option>Saturday</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <label for="inputState">Number of teams</label>
+                        <select id="inputState" class="form-control">
+                            <option selected>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <small class="form-text text-muted">The number of teams is limited according to the subscription. Agents and managers can get assigned to certain teams.</small>
+                    </div>
+                </div>
+                <!-- here comes the loop according to the number of teams -->
+                 <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <label for="exampleInputEmail1">Team 1</label>
+                        <input type="text" class="form-control" id="i-company-name" placeholder="Enter a team name" maxlength="40">
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <label for="exampleInputEmail1">Team 2</label>
+                        <input type="text" class="form-control" id="i-company-name" placeholder="Enter a team name" maxlength="40">
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <label for="exampleInputEmail1">Team 3</label>
+                        <input type="text" class="form-control" id="i-company-name" placeholder="Enter a team name" maxlength="40">
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <label for="exampleInputEmail1">Team 4</label>
+                        <input type="text" class="form-control" id="i-company-name" placeholder="Enter a team name" maxlength="40">
+                    </div>
 
-                Working hours: <br><br>
-                Time range (drop down: 1, 2, 3)<br><br>
-
-                Sunday <br>
-                Monday <br>
-                Tuesday <br>
-                Wednesday <br>
-                Thursday <br>
-                Friday <br>
-                Saturday <br>
-<br>
-                Number of agent levels (dopdown number. Preset: 4) - Can be changed for individual shifts<br>
-                (This list changes according to the selection above, and can get changed)
-                - Intern<br>
-                - Junior<br>
-                - Medior<br>
-                - Senior<br><br>
-
-                Standard lenght of lunch break: 30 min<br>
-                Standard lenght of dinner break: 30 min<br>
-                Standard lenght of break during working time: 15 min<br><br>
+                </div>
+                <!-- end loop -->
 
 
 
-
-
-
-
-
-
+                
+                <!-- table -->
+                <p>Choose the scope of managers</p>
+                 <div class="row">
+                    <div class="col-6">
+                        <p>Activity</p>
+                    </div>
+                    <div class="col-3">
+                        <p>Their team</p>
+                    </div>
+                    <div class="col-3">
+                        <p>All teams</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <p>See planning</p>
+                    </div>
+                    <div class="col-3">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" checked>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <p>Edit planning</p>
+                    </div>
+                    <div class="col-3">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                            </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" checked>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <p>See coaching</p>
+                    </div>
+                    <div class="col-3">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" checked>
+                            </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <p>Edit coaching</p>
+                    </div>
+                    <div class="col-3">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" checked>
+                            </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input">
+                        </div>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Submit</button>
             </form>
+          
+ 
         </div>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>

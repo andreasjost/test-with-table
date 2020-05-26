@@ -7,12 +7,13 @@ const expandedDayWidth = 300;
 $(document).ready(function() {
     weekTables();
 
+    // select a date column to expand
     $('.select-col').click(function() {
         $(this).parent().toggleClass('expand-day');
-        
+        $(this).find('div.expand-time').toggleClass('show-timescale');
+        $(this).find('div.time-label').remove();
         x = expandedDayWidth / hoursRange; // for the with of the time grid
         
-
         for (let i = startHour; i < endHour; i++) {
             var el = '<div class="time-label" ' +
                 'style="width: ' + x + 'px;">'+ i +
@@ -98,6 +99,8 @@ function weekTables() {
     }
     
 }
+
+
 
 // get the calendarweek-number
 Date.prototype.getWeek = function() {
