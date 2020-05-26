@@ -31,16 +31,17 @@
                             User Name
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">User Management</a>
+                                <a class="dropdown-item" href="user-manage.html">User Management</a>
                                 <a class="dropdown-item" href="admin-settings.html">Global Settings</a>
                                 <a class="dropdown-item" href="#">Personal Settings</a>
                                 <a class="dropdown-item" href="manager-settings.html">Global settings (only visible for managers)</a>
                                 <a class="dropdown-item" href="#">Subscription info</a>
+                                <!-- no summary in admin or manager menu if they are not in the schedule -->
+                                <a class="dropdown-item" href="#">Summary</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#">Logout</a>
                             </div>
                         </li>
-                        
                     </ul>
                 </div>
             </nav>
@@ -50,11 +51,59 @@
         <br>
         <br>
         <div class="container">
-            <div class="table-container">
-                <div class="month-table" id="weeks-container">
-                    <!-- JS magic -->
+            <h1>Personal Settings</h1>
+            <!-- only a Manager or Admin can change his/her own settings (ie. Name) -->
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <p>Name: 'Full Name'</p>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                    <p>Short Name: 'Short Name'</p>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <label for="email-addr">Email address</label>
+                    <input type="email" class="form-control" id="email-addr" placeholder="Enter email">
+                </div>
+                <div class="col-sm-12 col-md-6">
+                    <p>Team: 'Team1, Team2'</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-3">
+                    <p>Contract: 'Full Time'</p>
+                </div>
+                <div class="col-sm-12 col-md-3">
+                    <p>Level: 'Senior'</p>
+                </div>
+                <div class="col-sm-12 col-md-3">
+                    <p>Start Date: '01.01.1970'</p>
+                </div>
+                <div class="col-sm-12 col-md-3">
+                    <p>End Date: '31.12.1970'</p>
+                </div>
+            </div>
+            <input class="form-check-input" type="checkbox" id="see-bday" required>
+            <label class="form-check-label" for="see-bday">
+            Others can see my birthday (without year)
+            </label>
+            <br>
+            <input class="form-check-input" type="checkbox" id="see-contract" required>
+            <label class="form-check-label" for="see-contract">
+            Others can see my contract information (type + dates)
+            </label>
+            <br>
+            <p>Change password</p>
+             <label for="current-password">Current password</label>
+                <input type="email" class="form-control" id="current-password" placeholder="Enter email">
+            
+            <label for="new-password">New password</label>
+                <input type="email" class="form-control" id="new-password" placeholder="Enter email">
+            
+            <label for="new-password-rep">Repeat new password</label>
+                <input type="email" class="form-control" id="new-password-rep" placeholder="Enter email">
+
         </div>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>

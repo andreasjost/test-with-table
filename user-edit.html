@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" type="text/css" />
+        <link rel="stylesheet" type="text/css" href="main.css">
+        <title>Document</title>
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Planning<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Coaching</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Messages</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            User Name
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">User Management</a>
+                                <a class="dropdown-item" href="admin-settings.html">Global Settings</a>
+                                <a class="dropdown-item" href="#">Personal Settings</a>
+                                <a class="dropdown-item" href="manager-settings.html">Global settings (only visible for managers)</a>
+                                <a class="dropdown-item" href="#">Subscription info</a>
+                                <!-- no summary in admin or manager menu if they are not in the schedule -->
+                                <a class="dropdown-item" href="#">Summary</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Logout</a>
+                            </div>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="container">
+            <form>
+
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                    <label for="inputState">Choose access priviledges</label>
+                    <select id="inputState" class="form-control">
+                        <option selected>Agent</option>
+                        <option>Manager</option>
+                        <option>Administrator</option>
+                        <option>Visitor</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <label for="exampleInputEmail1">First Name (with or without middle name)</label>
+                        <input type="text" class="form-control" id="i-company-name" placeholder="Enter name" maxlength="40">
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <small class="form-text text-muted">This will be shown in the upper left corner</small>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <label for="exampleInputEmail1">Surname</label>
+                        <input type="text" class="form-control" id="i-company-name" placeholder="Enter name" maxlength="40">
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <small class="form-text text-muted">This will be shown in the upper left corner</small>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <label for="exampleInputEmail1">Short name</label>
+                        <input type="text" class="form-control" id="i-company-name" placeholder="Enter name" maxlength="40">
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <small class="form-text text-muted">Will be shown on small screens (table)</small>
+                    </div>
+                </div>
+
+                <!-- followint options don't show if it's just a visitor -->
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <label for="exampleInputEmail1">Birthdate</label>
+                        <input type="text" class="form-control" id="i-company-name" placeholder="Enter name" maxlength="40">
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <small class="form-text text-muted">Will be shown on small screens (table)</small>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <small class="form-text text-muted">Not mandatory. All correspondence happens to the email adresses of the admins</small>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <label for="exampleInputEmail1">Start date</label>
+                        <input type="date" class="form-control" id="exampleInputEmail1" placeholder="Anstellungsdatum">
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <small class="form-text text-muted">Not mandatory. All correspondence happens to the email adresses of the admins</small>
+                    </div>
+                </div>
+                    <div class="col-sm-12 col-md-6">
+                        <label for="exampleInputEmail1">End date</label>
+                        <input type="date" class="form-control" id="exampleInputEmail1" placeholder="Kuendigungsdatum">
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <small class="form-text text-muted">Not mandatory. All correspondence happens to the email adresses of the admins</small>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                    <label for="inputState">Anstellungsverhaeltnis</label>
+                    <select id="inputState" class="form-control">
+                        <option selected>Full time</option>
+                        <option>Part time</option>
+                        <option>Hour contract</option>
+                    </select>
+                </div>
+
+                <!-- appears only when AGENT is selected above -->
+                <div class="col-sm-12 col-md-6">
+                    
+                    <label for="inputState">Choose main level</label>
+                    <select id="inputState" class="form-control">
+                        <option selected>Intern</option>
+                        <option>Junior</option>
+                        <option>Medior</option>
+                        <option>Senior</option>
+                    </select>
+                </div>
+
+                <!-- appears only when AGENT, VISITOR or MANAGER is selected above -->
+                <!-- Iterate through the teams -->
+                <div class="col-sm-12 col-md-6">
+                    <p>Chose the team</p>
+                    <input class="form-check-input" type="checkbox" id="change-same" required>
+                    <label class="form-check-label" for="changeSame">
+                    Team 1
+                    </label>
+                    <input class="form-check-input" type="checkbox" id="change-same" required>
+                    <label class="form-check-label" for="changeSame">
+                    Team 2
+                    </label>
+                    <p>...</p>
+                </div>
+            </form>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
